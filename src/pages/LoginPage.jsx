@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink ,Link , useNavigate } from 'react-router-dom'
+import { NavLink, Link, useNavigate } from 'react-router-dom'
+import LoginForm from '../components/auth/LoginForm';
 
 export default function LoginPage() {
 
@@ -12,14 +13,18 @@ export default function LoginPage() {
   return (
     <div>
       <div>Login Page</div>
-      <Link to = "/register">Link to Page</Link>
-      <NavLink to = "/register">Navlink to Page</NavLink>
+      <Link to="/register">Link to Page</Link>
+      <NavLink to="/register">Navlink to Page</NavLink>
       <button onClick={eventChangePage}>Event based </button>
-      <button onClick = {
+      <button onClick={
         (event) => {
           eventChangePage(event)
         }
       }>Event based with call back </button>
+
+      <div>
+        <LoginForm />
+      </div>
     </div>
   )
 }

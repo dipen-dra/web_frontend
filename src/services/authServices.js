@@ -9,3 +9,12 @@ export const registerUserService = async (formData) => {
     }
 }
 
+export const loginUserService = async (formData) => {
+    try {
+        const response = await loginUserApi(formData);
+        return response.data;
+    } catch (error) {
+        throw error.response?.data || { message: "Login failed" };
+    }
+}
+
